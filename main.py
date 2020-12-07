@@ -4,9 +4,13 @@
 import random
 from random import choice
 
+# Account takes in wish, but doesn't do anything yet
+
+# When you call .choosewish('Intertwined/Acquaint', 10), it will choose whichever you picked berween Intertwined and Acquaint and pull the amount of the second parameter entered.
+
 
 class Account:
-    def __init__(self, name, wish, characters=[], attempts=0, primogem=1600, ):
+    def __init__(self, name, wish='', attempts=0, characters=[], primogem=1600):
         self.name = name
         self.wish = wish
         self.attempts = attempts
@@ -14,32 +18,37 @@ class Account:
         # characters remained public because it needs to be called to be printed
         self.characters = list()
 
-    # This takes in the parameter "wish" in order to see which type of wish is chosen. Whichever is chosen, attempts is then sent to the method chosen.
-    def choosewish(self, wish, attempts, primogem):
-        if self.wish == 'Acquaint':
-            return self.Acquaint(self.attempts, self.primogem)
-        elif self.wish == 'Intertwined':
-            return self.Intertwined(self.attempts, self.primogem)
-
     # This takes away 160 primogems from the user and runs the Intertwined wish
 
-    def Intertwined(self, attempts, primogem):
+    def Intertwined(self, attempts, primogem=1600):
         for attempt in range(attempts):
             self.primogem -= 160
-            obj = IntertwinedPull(self.attempts)
-            data = obj.Intertwinedchances(self.attempts)
-            # return self.Intertwinedpull(1)
+            print('Intertwined')
+            new = self.name = IntertwinedPull(self.attempts)
+            return new
+            # return self.Intertwinedchances(self.attempts)
+            # obj = IntertwinedPull(self.attempts)
+            # data = obj.Intertwinedchances(self.attempts)
+            # return self.data
 
     # This takes away 160 primogems from the user and runs the Acquaint wish
-    def Acquaint(self, attempts, primogem):
+    def Acquaint(self, attempts, primogem=1600):
         for attempt in range(attempts):
             self.primogem -= 160
-            obj2 = AcquaintPull(self.attempts)
-            data2 = obj.Acquaintchances(self.attempts)
+            print('acquaint')
+            # obj2 = AcquaintPull(self.attempts)
+            # data2 = obj.Acquaintchances(self.attempts)
             # return self.AcquaintPull(1)
 
+    # This takes in the parameter "wish" in order to see which type of wish is chosen. Whichever is chosen, attempts is then sent to the method chosen.
+    # def choosewish(self, wish, attempts, primogem=1600):
+    #     if self.wish == 'Acquaint':
+    #         return self.Acquaint(self.attempts, self.primogem)
+    #     elif self.wish == 'Intertwined':
+    #         return self.Intertwined(self.attempts, self.primogem)
 
-class Characterlist:
+
+class Characterlist(Account):
     def __init__(self, name, characters):
         super(name, characters)
 
@@ -55,7 +64,7 @@ class Characterlist:
 class AcquaintPull(Account):
 
     def __init__(self, attempts):
-        super(attempts)
+        super().__init__(attempts)
 
     # This takes in attempts and uses the corresponding method from what is called for above. It will keep attempting and will print out what the result of each wish is
     def Acquaintchances(self, attempts):
@@ -85,7 +94,7 @@ class AcquaintPull(Account):
 
 class IntertwinedPull(Account):
     def __init__(self, attempts):
-        super(attempts)
+        super().__init__(attempts)
 
     def Intertwinedchances(self, attempts):
         for attempt in range(self.attempts):
@@ -113,9 +122,10 @@ class IntertwinedPull(Account):
 
 
 if __name__ == "__main__":
-    account_one = Account(name="acc1", wish='Acquaint')
-    accounttwo = Account(name="acc2", wish='Intertwined')
-    account_one.Intertwined(attempts=10, primogem=1600)
+    account_one = IntertwinedPull(1)
+    accounttwo = Account(name="acc2")
+
+    account_one.Intertwinedchances(2)
 
 
 #   Questions:
@@ -123,3 +133,8 @@ if __name__ == "__main__":
 # 1. How do I pass the values to a subclass's method
 
 # 2. For choice(), I got the error "Too many positional arguments for method callpylint(too-many-function-args)" How can I fix this?
+
+
+#        ------class Account---------
+#        |                          |
+# class AcquaintPull    class IntertwinedPull
