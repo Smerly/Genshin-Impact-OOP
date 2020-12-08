@@ -54,5 +54,5 @@ def Intertwinedchances(attempts):
             characters.append(random_three2)
 
 
-Intertwinedchances(5)
+Intertwinedchances(2)
 print(str(characters))
