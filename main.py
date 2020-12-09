@@ -9,6 +9,15 @@ from random import choice
 # When you call .choosewish('Intertwined/Acquaint', 10), it will choose whichever you picked berween Intertwined and Acquaint and pull the amount of the second parameter entered.
 
 
+#  WARNING | WARNING |  WARNING | WARNING |  WARNING | WARNING |  WARNING | WARNING |  WARNING | WARNING |  WARNING | WARNING |  WARNING | WARNING |
+
+
+#  This is not the main python code, this is a backup. The main python code is in main3.py
+
+
+#  WARNING | WARNING |  WARNING | WARNING |  WARNING | WARNING |  WARNING | WARNING |  WARNING | WARNING |  WARNING | WARNING |  WARNING | WARNING |
+
+
 class Account:
     def __init__(self, name, attempts=0, characters=[], primogem=1600):
         self.name = name

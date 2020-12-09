@@ -9,6 +9,15 @@ from random import choice
 # When you call .choosewish('Intertwined/Acquaint', 10), it will choose whichever you picked berween Intertwined and Acquaint and pull the amount of the second parameter entered.
 
 
+#  WARNING | WARNING |  WARNING | WARNING |  WARNING | WARNING |  WARNING | WARNING |  WARNING | WARNING |  WARNING | WARNING |  WARNING | WARNING |
+
+
+#  This is not the main python code, this is a backup. The main python code is in main3.py
+
+
+#  WARNING | WARNING |  WARNING | WARNING |  WARNING | WARNING |  WARNING | WARNING |  WARNING | WARNING |  WARNING | WARNING |  WARNING | WARNING |
+
+
 class Account:
 
     shared_attempts_intertwined = 0
@@ -125,14 +134,14 @@ class IntertwinedPull(Account):
 
 if __name__ == "__main__":
     account_one = Account('Naniderawr')
-    account_one.Intertwined(5)
+    account_one.Intertwined(3)
 
     # account_one_pull = IntertwinedPull()
     # account_one_pull.Intertwinedchances()
 
-    # account_one.checkcharacters()
-    # account_one.Intertwined(3)
-    # print(account_one.characters)
+    account_one.checkcharacters()
+    account_one.Intertwined(3)
+    print(account_one.characters)
 
 
 # if __name__ == "__main__":
